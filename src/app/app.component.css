@@ -1,0 +1,16 @@
+img {
+  margin: 4px;
+  padding: 4px;
+  border:dashed 1px red;
+}
+
+
+.single-image {
+  border: dashed 1px #fbc0b3;
+  margin:4px;
+  padding: 4px;
+}
+
+.images-list {
+  border: solid 1px blue;
+}
