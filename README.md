@@ -1,5 +1,9 @@
 # HelloAngular
 
+## Help this project
+
+If you got luck and find this project, you can make improve it by fixing issues. I'll be totaly glad 🎉
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
 
 ## Development server
