@@ -3,7 +3,7 @@ import { Image } from './entities/image'
 
 
 declare const particlesJS: any;
-const PARTICLES_CONFIG_PATH = 'assets/config/particles-foncfig.json';
+const PARTICLES_CONFIG_PATH: string = 'assets/config/particles-config.json';
 
 
 @Component({
@@ -14,19 +14,19 @@ const PARTICLES_CONFIG_PATH = 'assets/config/particles-foncfig.json';
 
 
 export class AppComponent implements OnInit{
-  image: Image = null;
+  images: Image[] = [];
 
   constructor() {
-    this.image = new Image (
-      {
-        filename: 'Redfish.jpg',
-        title: 'Red Fish'
-      }
-    )
+    this.images = [
+      new Image ({filename: 'Redfish.jpg',title: 'Red Fish'}),
+      new Image ({filename: 'Redfish.jpg',title: 'Red Fish'}),
+      ]
   }
 
   ngOnInit(): void {
-    particlesJS.kiad('particles-js', PARTICLES_CONFIG_PATH, null);
+    particlesJS.load('particles-js', 'assets/particles.json', function () {
+      console.log('callback - particles.js config loaded');
+    });
   }
 
 }
