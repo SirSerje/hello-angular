@@ -18,8 +18,10 @@ export class AppComponent implements OnInit{
 
   constructor() {
     this.images = [
-      new Image ({filename: 'Redfish.jpg',title: 'Red Fish'}),
-      new Image ({filename: 'Redfish.jpg',title: 'Red Fish'}),
+      new Image ({filename: 'redfish.png',title: 'Red Fish'}),
+      new Image ({filename: 'longfish.png',title: 'Long Fish'}),
+      new Image ({filename: 'rightfish.png',title: 'Right Fish'}),
+      new Image ({filename: 'goldfish.png',title: 'Gold Fish'}),
       ]
   }
 

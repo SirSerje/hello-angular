@@ -3,20 +3,7 @@
     <a href="#">Image Ocean</a>
   </header>
   <div class="images-list">
-    <div class="single-image" *ngFor="let image of images">
-      <header>      {{image.title}}</header>
-      <img src="{{image.imagePath}}" height="100px" />
-
-      <div class="heart-animation" *ngIf="image.liked">
-        <!--<i class="fa fa-heart" class="fa fa-heart"></i>-->
-        BBB
-      </div>
-
-      <footer class="like-image" (click)="image.like()">
-        VVV
-        <!--<i class="fa fa-heart" class="fa fa-heart"></i>--> {{image.liked ? 'liked' : 'like'}}
-      </footer>
-
-    </div>
+    <app-single-image *ngFor="let image of images" [image] = "image"></app-single-image>
   </div>
 </div>
+

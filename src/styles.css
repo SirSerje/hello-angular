@@ -1,12 +1,50 @@
-
 body {
-  background: #ededed;
-  display:flex;
+  font-family: 'Roboto', sans-serif;
+  background: black;
+  margin: 0;
+  color: white;
+}
+
+#particles-js {
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  width: 100vw;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.app-footer {
+  position: absolute;
+  bottom: 50px;
+  font-size: 40px;
+  width: 100%;
+  text-align: center;
+  font-weight: 100;
+}
+
+.single-image {
+  display: inline-block;
+  -webkit-user-select: none;
+  padding: 30px;
+  border: 1px solid #191a1a;
+  position: relative;
+}
+
+.single-image img {
+  width: 300px;
+  opacity: 0.75;
+
+}
+
+.single-image img:hover {
+  opacity: 1;
 }
 
 
-app-root {
-  background: #ffd7cd;
-  width:70%;
-  margin: 0 auto;;
+.like-image {
+  curstor: pointer;
+  colow: white;
 }
+
+/* TODO: investigate, how to migrate to scss #1 */
