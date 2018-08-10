@@ -1,0 +1,22 @@
+/* TODO: make correct animation #1 */
+@keyframes heat-animation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.heart-animation {
+  position: absolute;
+  /*top: calc(50%-64px);*/
+  /*left: calc(50%-64px);*/
+  font-size:128px;
+  animation-name: heat-animation;
+  animation-duration: 5s;
+  color: red;
+  opacity: 0;
+  pointer-events: none;
+
+}

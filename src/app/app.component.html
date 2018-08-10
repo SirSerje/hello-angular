@@ -1,9 +1,10 @@
 <div style = "text-align:center">
   <header class="app-header">
-    <a href="#">Image Ocean</a>
+    <a routerLink="/dashboard">Image Ocean</a>
+
   </header>
-  <div class="images-list">
-    <app-single-image *ngFor="let image of images" [image] = "image"></app-single-image>
-  </div>
+ <router-outlet>
+
+ </router-outlet>
 </div>
 
