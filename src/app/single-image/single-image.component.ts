@@ -7,14 +7,12 @@ import {Image} from '../entities/image'
 })
 export class SingleImageComponent implements OnInit {
 
-
   @Input() image : Image = null
 
   constructor() { }
 
   ngOnInit() {
 
-    console.log('simple image component inited');
   }
 
 }

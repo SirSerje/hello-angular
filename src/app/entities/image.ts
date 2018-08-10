@@ -1,14 +1,13 @@
 const GALLERY_IMAGE_PATH = 'assets/images/gallery'
 
 export class Image {
-  filename: string
-  id:number
-  title: string
-
-  liked:Boolean
+  filename: string = ''
+  id:number = -1
+  title: string = ''
+  liked:boolean = false;
 
   like():void {
-    this.liked = true
+    this.liked = !this.liked
   }
 
   get imagePath() :string {
@@ -16,7 +15,6 @@ export class Image {
   }
 
   constructor(fields?) {
-    console.log('img entity is constructed', fields)
     if(fields) {
       Object.assign(this, fields)
     }

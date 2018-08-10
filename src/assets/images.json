@@ -1,0 +1,24 @@
+{
+  "images": [
+    {
+      "filename": "redfish.png",
+      "title": "Red Fish",
+      "id": 0
+    },
+    {
+      "filename": "longfish.png",
+      "title": "Long Fish",
+      "id": 1
+    },
+    {
+      "filename": "rightfish.png",
+      "title": "Right Fish",
+      "id": 2
+    },
+    {
+      "filename": "goldfish.png",
+      "title": "Gold Fish",
+      "id": 3
+    }
+  ]
+}
