@@ -21,3 +21,4 @@ export class Image {
   }
 }
 
+// TODO: convert to service #2
