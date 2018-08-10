@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Image} from "../entities/image";
 import {ActivatedRoute, Router} from "@angular/router";
-import {IMAGES_MOCK} from '../dashboard/dashboard.component'
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-image-detail',
@@ -13,14 +13,19 @@ export class ImageDetailComponent implements OnInit {
   image: Image;
 
 
-  constructor(private route: ActivatedRoute,
-              private router: Router) {
-
-  }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private http: HttpClient
+  ) { }
 
   ngOnInit() {
-    this.route.params .subscribe(params => {
-      this.image = IMAGES_MOCK.find(image => image.id === +params.id)
+    this.route.params.subscribe(params => {
+      this.http.get(`../assets/image${+params.id}.json`)
+        .subscribe(data => {
+        this.image = new Image(data);
+      })
+
     })
   }
 

@@ -2,21 +2,23 @@
 @keyframes heat-animation {
   from {
     opacity: 1;
+    transform: scale(1);
   }
   to {
     opacity: 0;
+    transform: scale(0.7);
   }
 }
 
-.heart-animation {
+div.heart-animation {
   position: absolute;
-  /*top: calc(50%-64px);*/
-  /*left: calc(50%-64px);*/
-  font-size:128px;
+top:0px;
+  left:0px;
+  font-size:40px;
   animation-name: heat-animation;
-  animation-duration: 5s;
-  color: red;
+  transition: all 500ms cubic-bezier(1.000, -0.160, 0.590, 0.145);
+  animation-duration: .7s;
+  color: #c5004b;
   opacity: 0;
   pointer-events: none;
-
 }
