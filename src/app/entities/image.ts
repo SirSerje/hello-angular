@@ -1,5 +1,7 @@
 const GALLERY_IMAGE_PATH = 'assets/images/gallery';
-const IMAGES_HOST = 'http://localhost:3000/uploads';
+
+const SERVER_PORT = 3001;
+const IMAGES_HOST = `http://localhost:${SERVER_PORT}/uploads`;
 
 export class Image {
   // noinspection TsLint
@@ -16,8 +18,12 @@ export class Image {
   }
 
   get imagePath(): string {
-    return `${GALLERY_IMAGE_PATH}/${this.filename}`;
+    return `${IMAGES_HOST}/${this.filename}`;
   }
+
+  // get imagePath(): string {
+  //   return `${GALLERY_IMAGE_PATH}/${this.filename}`;
+  // }
 
   constructor(fields?) {
     if (fields) {

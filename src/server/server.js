@@ -1,23 +1,25 @@
 const express = require('express');
 const app = express();
 const multer = require('multer');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 
-const SERVER_PORT = 3001
+const SERVER_PORT = 3001;
 
 app.use(bodyParser.json());
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*")
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 
-app.use("/uploads", express.static(__dirname + "public/uploads"));
+
+
+app.use("/uploads", express.static(__dirname + "/uploads"));
 
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
-    cb(null, "public/uploads")
+    cb(null, "uploads")
   },
   filename: function(req, file, cb) {
     cb(null, file.originalname)

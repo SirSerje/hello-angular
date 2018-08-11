@@ -1,6 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
+const SERVER_PORT = 3001;
+
 @Component({
   selector: 'app-image-add',
   templateUrl: './image-add.component.html',
@@ -26,7 +28,7 @@ export class ImageAddComponent implements OnInit {
       formData.append('image', nativeElement.files[0]);
 
       // TODO: implement server side
-      this.http.post('http://localhost:3000/image-upload-file', formData).subscribe(data => {
+      this.http.post(`http://localhost:${SERVER_PORT}/image-upload-file`, formData).subscribe(data => {
         alert('success');
       });
 
