@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Image} from '../entities/image'
-import {HttpClient} from "@angular/common/http";
+import {Image} from '../entities/image';
+import {HttpClient} from '@angular/common/http';
 
 
 @Component({
@@ -18,8 +18,8 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.http.get('../assets/images.json').subscribe(data => {
-      this.images = data['images'].map(imageData => new Image(imageData))
-    })
+      this.images = data['images'].map(imageData => new Image(imageData));
+    });
   }
 
 }

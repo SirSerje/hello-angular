@@ -1,4 +1,9 @@
 <div class="images-list">
-  <app-single-image *ngFor="let image of images" [image] = "image" routerLink="/image/{{image.id}}">
-  </app-single-image>
+
+  <app-single-image *ngFor="let image of images" [image]="image" routerLink="/image/{{image.id}}"></app-single-image>
+
+  <footer class="app-footer" routerLink="/add-image">
+    <i class="fa fa-plus-square" aria-hidden="true"></i> ADD IMAGE
+  </footer>
+
 </div>

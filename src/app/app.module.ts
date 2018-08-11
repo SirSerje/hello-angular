@@ -1,14 +1,16 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from "@angular/router";
-import {HttpClientModule} from "@angular/common/http";
+import {RouterModule, Routes} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
+import { FormsModule} from '@angular/forms';
 
 import {AppComponent} from './app.component';
 import {SingleImageComponent} from './single-image/single-image.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {ImageDetailComponent} from './image-detail/image-detail.component';
+import { ImageAddComponent } from './image-add/image-add.component';
 
-const appRoutes : Routes = [
+const appRoutes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent
@@ -16,6 +18,10 @@ const appRoutes : Routes = [
   {
     path: 'image/:id',
     component: ImageDetailComponent
+  },
+  {
+    path: 'add',
+    component: ImageAddComponent
   },
   {
     path: '',
@@ -29,12 +35,14 @@ const appRoutes : Routes = [
     AppComponent,
     SingleImageComponent,
     DashboardComponent,
-    ImageDetailComponent
+    ImageDetailComponent,
+    ImageAddComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
