@@ -4,6 +4,30 @@ const multer = require('multer');
 const bodyParser = require('body-parser');
 
 const SERVER_PORT = 3001;
+let nextId = 3;
+
+const images = [
+  {
+    id: 0,
+    fileName: 'goldfish.png',
+    title: 'Red Fish'
+  },
+  {
+    id: 1,
+    fileName: 'longfish.png',
+    title: 'Long Shark'
+  },
+  {
+    id: 2,
+    fileName: 'redfish.png',
+    title: 'Damn Shark'
+  },
+  {
+    id: 3,
+    fileName: 'rightfish.png',
+    title: 'Super Duper Shark'
+  }
+];
 
 app.use(bodyParser.json());
 
@@ -14,12 +38,11 @@ app.use(function(req, res, next) {
 });
 
 
-
-app.use("/uploads", express.static(__dirname + "/uploads"));
+app.use("/uploads", express.static(__dirname + "/public/uploads"));
 
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
-    cb(null, "uploads")
+    cb(null, "public/uploads")
   },
   filename: function(req, file, cb) {
     cb(null, file.originalname)
@@ -27,21 +50,6 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({dest: "uploads/", storage});
-
-const images = [
-  {
-    id: 0,
-    fileName: 'red_fish.jpg',
-    title: 'Red Fish'
-  },
-  {
-    id: 1,
-    fileName: 'shark.jpg',
-    title: 'Shark'
-  }
-];
-
-let nextId = 2;
 
 app.get('/images', function(req, res) {
   res.json({
