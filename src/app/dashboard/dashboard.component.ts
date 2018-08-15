@@ -17,13 +17,6 @@ export class DashboardComponent implements OnInit {
 
   }
 
-
-  // ngOnInit() {
-  //   this.http.get('../assets/images.json').subscribe(data => {
-  //     this.images = data['images'].map(imageData => new Image(imageData));
-  //   });
-  // }
-
   ngOnInit() {
     this.http.get(`http://localhost:${SERVER_PORT}/images`).subscribe(
       data => {

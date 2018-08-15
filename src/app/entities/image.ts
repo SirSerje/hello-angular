@@ -5,7 +5,7 @@ const IMAGES_HOST = `http://localhost:${SERVER_PORT}/uploads`;
 
 export class Image {
   // noinspection TsLint
-  filename: string = 'default.png';
+  fileName: string = 'default.png';
   // noinspection TsLint
   id: number = -1;
   // noinspection TsLint
@@ -18,13 +18,8 @@ export class Image {
   }
 
   get imagePath(): string {
-    console.log('>>>', this.filename);
-    return `${IMAGES_HOST}/${this.filename}`;
+    return `${IMAGES_HOST}/${this.fileName}`;
   }
-
-  // get imagePath(): string {
-  //   return `${GALLERY_IMAGE_PATH}/${this.filename}`;
-  // }
 
   constructor(fields?) {
     if (fields) {

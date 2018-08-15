@@ -57,9 +57,16 @@ app.get('/images', function(req, res) {
   });
 });
 
-app.get("/images/:id", function(req, res) {
+app.get("/image/:id", function(req, res) {
+  images.forEach(i => {
+    if (i.id === +req.params.id
+    ) {
+      res.json({image: i});
+    }
+  });
+  // FIXME: this isn't working AS BOOK EXPECTED
   res.json({
-    image: image.find(image => image.id === +req.params.id)
+    image: image.find(i => i.id === +req.params.id)
   });
 });
 
