@@ -13,6 +13,14 @@ body {
   z-index: -1;
   pointer-events: none;
 }
+a, a:visited, a:hover {
+  color: white;
+  font-size: 40px;
+  width: 100%;
+  text-align: center;
+  font-weight: 100;
+  text-decoration: none;
+}
 
 .app-footer {
   position: absolute;
@@ -41,10 +49,14 @@ body {
   opacity: 1;
 }
 
+.images-list {
+  /* FIXME: dirty, but currently work fine */
+  padding-top: 30px;
+}
 
 .like-image {
-  curstor: pointer;
-  colow: white;
+  cursor: pointer;
+  color: white;
 }
 
 /* TODO: investigate, how to migrate to scss #1 */

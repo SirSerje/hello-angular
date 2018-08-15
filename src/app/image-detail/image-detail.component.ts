@@ -21,12 +21,12 @@ export class ImageDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.http.get(`../assets/image${+params.id}.json`)
-        .subscribe(data => {
-        this.image = new Image(data);
-      })
-
-    })
+      // FIXME: make dynamic
+      this.http.get(`http://localhost:3001/image/${+params.id}`)
+        .subscribe((data: IIMageResponse) => {
+        this.image = new Image(data.image);
+      });
+    });
   }
 
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 
 declare const particlesJS: any;
-const PARTICLES_CONFIG_PATH: string = 'assets/config/particles-config.json';
+const PARTICLES_CONFIG_PATH = 'assets/config/particles-config.json';
 
 
 @Component({
@@ -12,7 +12,7 @@ const PARTICLES_CONFIG_PATH: string = 'assets/config/particles-config.json';
 })
 
 
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
